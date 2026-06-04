@@ -1,11 +1,11 @@
 {
   "generated_at": {
-    "utc": "2026-06-04T14:54:34+00:00",
-    "idt": "2026-06-04T17:54:34+03:00"
+    "utc": "2026-06-04T16:57:33+00:00",
+    "idt": "2026-06-04T19:57:33+03:00"
   },
   "funnel": {
-    "candidates": 6,
-    "scored": 6,
+    "candidates": 14,
+    "scored": 7,
     "validated": 0,
     "build_decisions": {},
     "build_now": 0,
@@ -20,6 +20,11 @@
       "total": 7.3,
       "recommended_stage": "build",
       "rationale": "Silent AI-introduced bugs in payment/auth paths are a high-severity, recurring pain with active community discussion (47 comments confirms resonance). Teams already pay for code-review and security tooling, so WTP is strong. Claude is well-suited to diff-level LLM review, making this highly buildable as an AI-native service.",
+      "solution_plan": "",
+      "realistic": {
+        "verdict": "yes",
+        "weak": []
+      },
       "scores": {
         "Will pay": 8,
         "Buildable": 8,
@@ -37,6 +42,11 @@
       "total": 6.6,
       "recommended_stage": "validate",
       "rationale": "Engineering managers at AI-adopting companies genuinely feel the ROI-measurement gap, and this surfaces repeatedly in eng leadership conversations. Willingness to pay is reasonable given adjacent spend on tools like LinearB or Jellyfish. However, responsiveness signal is unproven and the space is crowded with incumbent metrics platforms pivoting to cover AI.",
+      "solution_plan": "",
+      "realistic": {
+        "verdict": "yes",
+        "weak": []
+      },
       "scores": {
         "Will pay": 7,
         "Buildable": 7,
@@ -54,6 +64,13 @@
       "total": 4.4,
       "recommended_stage": "drop",
       "rationale": "The governance gap is real but affects a narrow, ideologically-motivated open-source maintainer segment that strongly resists paying for tooling. Willingness to pay is low, responsiveness is unproven, and GitHub itself is likely to close this gap natively. Does not clear the 5.5 validate threshold.",
+      "solution_plan": "",
+      "realistic": {
+        "verdict": "no",
+        "weak": [
+          "get them to pay"
+        ]
+      },
       "scores": {
         "Will pay": 3,
         "Buildable": 6,
@@ -71,6 +88,14 @@
       "total": 4.3,
       "recommended_stage": "drop",
       "rationale": "The segment explicitly wants free/open-source tooling, making a viable revenue model difficult. Pain is real but low-urgency for most small teams, and several existing free solutions (Percona Audit Log, general-purpose query loggers) partially satisfy the need. Does not clear the 5.5 validate threshold.",
+      "solution_plan": "",
+      "realistic": {
+        "verdict": "no",
+        "weak": [
+          "build it",
+          "get them to pay"
+        ]
+      },
       "scores": {
         "Will pay": 3,
         "Buildable": 5,
@@ -88,6 +113,13 @@
       "total": 3.8,
       "recommended_stage": "drop",
       "rationale": "While the HN complaint pattern is real, this is a consumer indie-app play with low WTP (users expect free or $5 one-time), no clear B2B angle, and requires B2C scale. The B2C penalty correctly reflects that the revenue model is fragile at small user counts.",
+      "solution_plan": "",
+      "realistic": {
+        "verdict": "no",
+        "weak": [
+          "get them to pay"
+        ]
+      },
       "scores": {
         "Will pay": 4,
         "Buildable": 6,
@@ -105,6 +137,13 @@
       "total": 3.8,
       "recommended_stage": "drop",
       "rationale": "The product gap between Duolingo and essay tutors is genuine, but the target segment is fragmented globally, WTP for language-learning apps is structurally low (Duolingo's freemium conditions the market), and reaching qualifying leads at scale is costly. AI buildability is a strength but not enough to offset the B2C scale requirement and weak monetization signals.",
+      "solution_plan": "",
+      "realistic": {
+        "verdict": "no",
+        "weak": [
+          "get them to pay"
+        ]
+      },
       "scores": {
         "Will pay": 4,
         "Buildable": 7,
@@ -114,32 +153,65 @@
       "source_type": "forum",
       "source_url": "https://softwarerecs.stackexchange.com/questions/95411/english-writing-practice-site-or-app-like-duolingo-but-longer",
       "discovered_at": "2026-06-04T17:33:54+03:00"
+    },
+    {
+      "id": "01KT9RZ065WMS0EYH4CMC7PNQ7",
+      "problem_statement": "Developers monitoring network activity lack a single tool that combines per-socket/process transfer rate (current and accumulated) with a modern, usable terminal UI — existing tools like jnettop are functionally adequate but have poor UX.",
+      "target_segment": "Linux/macOS developers and sysadmins doing network diagnostics on the command line",
+      "total": 3.6,
+      "recommended_stage": "drop",
+      "rationale": "The buyers here are individual developers and sysadmins — a segment that overwhelmingly expects CLI tools to be free and open-source; there is essentially zero willingness-to-pay signal for a TUI network monitor. Operational autonomy is very low because the product is a downloadable tool, not a service Claude can deliver and bill automatically. Even if built and polished, monetisation requires a large free-user funnel that a solo non-technical operator cannot realistically sustain.",
+      "solution_plan": "Not recommended for build. This is a developer utility that lives and dies by GitHub stars and open-source adoption. A solo non-technical operator using a Claude factory cannot realistically build a native TUI application (it requires systems-level Rust/C code, OS-level socket APIs, testing on multiple Linux distros) nor monetise it — the market expects this kind of tool to be free. Attempting to sell it as a paid SaaS or paid download would face immediate rejection from the target segment.",
+      "realistic": {
+        "verdict": "no",
+        "weak": [
+          "run it hands-off",
+          "build it",
+          "find who pays",
+          "get them to pay"
+        ]
+      },
+      "scores": {
+        "Who pays": 5,
+        "Runs alone": 3,
+        "Will pay": 2,
+        "Buildable": 4,
+        "Pain": 4
+      },
+      "verdict": null,
+      "source_type": "hn",
+      "source_url": "https://news.ycombinator.com/item?id=46366838",
+      "discovered_at": "2026-06-04T19:55:15+03:00"
     }
   ],
   "approvals": [],
   "services": [],
   "spend": {
-    "today_usd": 0.1321,
-    "last_7_days_usd": 0.1321,
-    "all_time_usd": 0.1321,
+    "today_usd": 0.3246,
+    "last_7_days_usd": 0.3246,
+    "all_time_usd": 0.3246,
     "by_day": [
       {
         "date": "2026-06-04",
-        "usd": 0.1321
+        "usd": 0.3246
       }
     ],
     "by_agent": [
       {
         "agent": "market_radar",
-        "usd": 0.073
+        "usd": 0.1303
       },
       {
         "agent": "opportunity_scoring",
-        "usd": 0.0505
+        "usd": 0.1228
+      },
+      {
+        "agent": "pain_validation",
+        "usd": 0.0585
       },
       {
         "agent": "daily_summary",
-        "usd": 0.0086
+        "usd": 0.013
       }
     ]
   },
@@ -176,30 +248,31 @@
       "date": "2026-06-04",
       "agents": {
         "build_decisions": {
-          "skipped": 1
+          "skipped": 2
         },
         "cost_gain": {
-          "skipped": 1
+          "skipped": 2
         },
         "daily_summary": {
-          "succeeded": 1
+          "succeeded": 2
         },
         "market_radar": {
-          "succeeded": 1
+          "succeeded": 2
         },
         "opportunity_scoring": {
-          "succeeded": 1
+          "succeeded": 2
         },
         "pain_validation": {
-          "skipped": 1
+          "skipped": 1,
+          "succeeded": 1
         }
       }
     }
   ],
   "latest_report_excerpt": {
-    "file": "reports/daily/2026-06-04.md",
+    "file": "reports/daily/2026-06-04_rerun_1957.md",
     "date": "2026-06-04",
-    "text": "# Daily Summary — 2026-06-04 (Thu)\n\n## Top-line (last 24h)\n\n| Metric | Value |\n|---|---|\n| New opportunities surfaced | 6 |\n| Opportunities validated past threshold | 0 |\n| Leads collected | 0 |\n| Outreach messages sent | 0 |\n| Replies received | 0 |\n| Approvals pending in queue | 0 |\n| Blockers (agent failures, policy hits) | 0 |\n\n## Per-experiment status\n\nNo active experiments in build or live stage. Factory is in discovery phase.\n\n## Approval queue digest\n\nEmpty.\n\n## Agent health\n\nAll 5 agents nominal.\n\n## Tomorrow's auto-scheduled actions\n\n1. `market_radar` continues discovery sweeps across tech and SaaS communities.\n2. `opportunity_scoring` processes new candidate signals as they arrive.\n3. `pain_validation` stages for validation runs once candidates reach threshold.\n4. `build_decisions` waits for validated opportunities to emerge.\n5. `cost_gain` analysis scheduled for weekly rollup.\n\n## Operator action items\n\nNone — process the approval queue and move on.",
+    "text": "# Daily Summary — 2026-06-04 (Wed)\n\n## Top-line (last 24h)\n\n| Metric | Value |\n|---|---|\n| New opportunities surfaced | 14 |\n| Opportunities validated past threshold | 0 |\n| Leads collected | 0 |\n| Outreach messages sent | 0 |\n| Replies received | 0 |\n| Approvals pending in queue | 0 |\n| Blockers (agent failures, policy hits) | 0 |\n\n## Per-experiment status\n\nNo active experiments. Factory in discovery phase.\n\n## Approval queue digest\n\nEmpty.\n\n## Agent health\n\nAll 6 agents nominal.\n\n## Tomorrow's auto-scheduled actions\n\n1. `market_radar` continues daily sweep of B2B SaaS communities for pain signals.\n2. `opportunity_scoring` processes the 14 candidate opportunities surfaced today.\n3. `pain_validation` runs targeted validation on top-scoring candidates.\n4. `build_decisions` reviews qualified opportunities for experiment fit.\n5. `cost_gain` prepares weekly analytics for Sunday ritual.\n\n## Operator action items\n\nNone — process the approval queue and move on.",
     "truncated": false
   },
   "analytics": null
